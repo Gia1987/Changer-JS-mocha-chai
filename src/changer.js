@@ -4,7 +4,15 @@ function Changer() {
 
 Changer.prototype.giveChange = function(amount) {
   var change = []
-  if(amount > 9){
+  if(amount > 199){
+      change.push('2£') ;
+    }else if (amount > 99 ) {
+      change.push('1£');
+    }else if (amount > 49) {
+      change.push('50p');
+    }else if (amount > 19) {
+      change.push('20p');
+    }else if(amount > 9){
       change.push('10p') ;
     }else if (amount > 4) {
       change.push('5p');
