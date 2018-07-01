@@ -3,13 +3,17 @@ function Changer() {
 }
 
 Changer.prototype.giveChange = function(amount) {
-  if(amount > 4){
-      return ['5p']
+  var change = []
+  if(amount > 9){
+      change.push('10p') ;
+    }else if (amount > 4) {
+      change.push('5p');
     }else if (amount > 1) {
-      return ['2p']
+      change.push('2p');
     }else{
-      return ['1p']
+      change.push('1p');
     }
+    return change
 }
 
 module.exports = Changer
