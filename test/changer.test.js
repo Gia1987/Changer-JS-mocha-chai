@@ -16,4 +16,16 @@ describe('Changer', function() {
   it('return 10p for 10', function(){
     expect(changer.giveChange(10)).to.eql(['10p'])
   });
+  it('return 20p for 20', function(){
+    expect(changer.giveChange(20)).to.eql(['20p'])
+  });
+  it('return 50p for 50', function(){
+    expect(changer.giveChange(50)).to.eql(['50p'])
+  });
+  it('return 1 £ for 100', function(){
+    expect(changer.giveChange(100)).to.eql(['1£'])
+  });
+  it('return 2£ for 200', function(){
+    expect(changer.giveChange(200)).to.eql(['2£'])
+  });
 });
