@@ -13,4 +13,7 @@ describe('Changer', function() {
   it('return 5p for 5', function() {
     expect(changer.giveChange(5)).to.eql(['5p'])
   });
+  it('return 10p for 10', function(){
+    expect(changer.giveChange(10)).to.eql(['10p'])
+  });
 });
