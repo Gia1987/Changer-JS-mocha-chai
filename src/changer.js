@@ -3,7 +3,11 @@ function Changer() {
 }
 
 Changer.prototype.giveChange = function(amount) {
-  return ['1p']
+  if(amount > 1){
+      return ['2p']
+    }else{
+      return ['1p']
+    }
 }
 
 module.exports = Changer
