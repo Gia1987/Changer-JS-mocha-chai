@@ -1,27 +1,27 @@
 function Changer() {
+  this.coins = {
+    200: '2£',
+    100: '1£',
+    50: '50p',
+    20: '20p',
+    10: '10p',
+    5: '5p',
+    2: '2p',
+    1: '1p'
+  }
 
 }
 
 Changer.prototype.giveChange = function(amount) {
   var change = []
-  if(amount > 199){
-      change.push('2£') ;
-    }else if (amount > 99 ) {
-      change.push('1£');
-    }else if (amount > 49) {
-      change.push('50p');
-    }else if (amount > 19) {
-      change.push('20p');
-    }else if(amount > 9){
-      change.push('10p') ;
-    }else if (amount > 4) {
-      change.push('5p');
-    }else if (amount > 1) {
-      change.push('2p');
-    }else{
-      change.push('1p');
+  var amountLeft = amount
+  Object.keys(this.coins).reverse().forEach(key => {
+    while (amountLeft >= key && amountLeft > 0){
+      amountLeft = amountLeft - key
+      change.push(this.coins[key]);
     }
-    return change
+  });
+  return change
 }
 
 module.exports = Changer
