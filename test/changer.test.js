@@ -28,4 +28,7 @@ describe('Changer', function() {
   it('return 2£ for 200', function(){
     expect(changer.giveChange(200)).to.eql(['2£'])
   });
+  it('return 50p, 20p, 5p for 75', function(){
+    expect(changer.giveChange(75)).to.eql(['50p', '20p','5p'])
+  });
 });
